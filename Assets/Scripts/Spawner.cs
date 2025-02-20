@@ -13,13 +13,15 @@ public GameObject follower;
     void Start()
     {
         // Instantiate(player, Vector3.zero, Quaternion.identity);
-        if(follower.tag == "Follower")
+        // if(follower.tag == "Follower")
             Instantiate(follower, new Vector3(2f, 3f, 0f), Quaternion.identity);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.P))
+            Instantiate(follower, new Vector3(UnityEngine.Random.Range(-10,10), UnityEngine.Random.Range(-10,10), 0f), Quaternion.identity);
+
     }
 }

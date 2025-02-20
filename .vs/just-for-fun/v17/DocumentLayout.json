@@ -1,9 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Unity 2024\\just-for-fun\\",
+  "WorkspaceRootPath": "C:\\Unity 2024\\GitHub\\just-for-fun\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E0434915-548F-97EB-A3A6-85BDBA6DDDBF}|Assembly-CSharp.csproj|c:\\unity 2024\\just-for-fun\\assets\\scripts\\movementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E0434915-548F-97EB-A3A6-85BDBA6DDDBF}|Assembly-CSharp.csproj|c:\\unity 2024\\github\\just-for-fun\\assets\\scripts\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0434915-548F-97EB-A3A6-85BDBA6DDDBF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0434915-548F-97EB-A3A6-85BDBA6DDDBF}|Assembly-CSharp.csproj|c:\\unity 2024\\github\\just-for-fun\\assets\\scripts\\movementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0434915-548F-97EB-A3A6-85BDBA6DDDBF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -19,10 +23,23 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Spawner.cs",
+              "DocumentMoniker": "C:\\Unity 2024\\GitHub\\just-for-fun\\Assets\\Scripts\\Spawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Spawner.cs",
+              "ToolTip": "C:\\Unity 2024\\GitHub\\just-for-fun\\Assets\\Scripts\\Spawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Spawner.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T12:03:42.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MovementController.cs",
-              "DocumentMoniker": "C:\\Unity 2024\\just-for-fun\\Assets\\Scripts\\MovementController.cs",
+              "DocumentMoniker": "C:\\Unity 2024\\GitHub\\just-for-fun\\Assets\\Scripts\\MovementController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MovementController.cs",
-              "ToolTip": "C:\\Unity 2024\\just-for-fun\\Assets\\Scripts\\MovementController.cs",
+              "ToolTip": "C:\\Unity 2024\\GitHub\\just-for-fun\\Assets\\Scripts\\MovementController.cs",
               "RelativeToolTip": "Assets\\Scripts\\MovementController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
