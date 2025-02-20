@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Unity 2024\\just-for-fun\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E0434915-548F-97EB-A3A6-85BDBA6DDDBF}|Assembly-CSharp.csproj|c:\\unity 2024\\just-for-fun\\assets\\scripts\\movementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0434915-548F-97EB-A3A6-85BDBA6DDDBF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MovementController.cs",
+              "DocumentMoniker": "C:\\Unity 2024\\just-for-fun\\Assets\\Scripts\\MovementController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MovementController.cs",
+              "ToolTip": "C:\\Unity 2024\\just-for-fun\\Assets\\Scripts\\MovementController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MovementController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T16:52:51.343Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
