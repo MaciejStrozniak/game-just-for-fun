@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
 {
 // public GameObject player;
 public GameObject follower;
+public GameObject pickup;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,13 @@ public GameObject follower;
     {
         if(Input.GetKeyDown(KeyCode.P))
             Instantiate(follower, new Vector3(UnityEngine.Random.Range(-10,10), UnityEngine.Random.Range(-10,10), 0f), Quaternion.identity);
+
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            for(int i = 0; i <=5; i++)
+                Instantiate(pickup, new Vector3(UnityEngine.Random.Range(-5,5), UnityEngine.Random.Range(-5,5), 0f), Quaternion.identity);
+        }
+
 
     }
 }
