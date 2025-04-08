@@ -11,31 +11,38 @@ public class EventHealthSubscriber : MonoBehaviour
     void Start()
     {
         healthEvent = GetComponent<HealthEvent>();
-        // healthEvent.OnHealthChange += HandleHealthChange;
+
+        healthEvent.OnPhysicalDmg += PhysicalDmg;
+        healthEvent.OnPhysicalDmg += DebugPhysicalDmg;
+
+        healthEvent.OnFireDmg += FireDmg;
+        healthEvent.OnFireDmg += DebugFireDmg;
+
+        healthEvent.OnHealing += Healing;
+        healthEvent.OnHealing += DebugHealing;
     }
 
-    private void HandleHealthChange(object sender, HealthEvent.HealthChangeEventArg e) {
-        // if(Input.GetKeyDown(KeyCode.R)){
-        //     healthEvent.PhysicalDmg();
-        //     Debug.Log("Physical damage delt!: " + e.PlayerHealth);
-        // }
-
-        // if(Input.GetKeyDown(KeyCode.T)) {
-        //     healthEvent.FireDmg();
-        //     Debug.Log("Fire damage delt!: " + e.PlayerHealth);
-        // }
+    private void PhysicalDmg(object sender, HealthEvent.HealthChangeEventArg e) {
+       e.PlayerHealth -= 10;
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.R)) {
-            healthEvent.PhysicalDmg(15);            
-        }
-        else if(Input.GetKeyDown(KeyCode.T)) {
-            healthEvent.FireDmg(30);
-        }
-        else if(Input.GetKeyDown(KeyCode.Y)) {
-            healthEvent.HealingFactor(30);
-        }
+    private void FireDmg(object sender, HealthEvent.HealthChangeEventArg e) {
+       e.PlayerHealth -= 20;
+    }
+
+    private void Healing(object sender, HealthEvent.HealthChangeEventArg e) {
+       e.PlayerHealth = 100;
+    }
+
+    private void DebugPhysicalDmg(object sender, HealthEvent.HealthChangeEventArg e) {
+       Debug.Log("Physical damage! " + e.PlayerHealth);
+    }
+
+    private void DebugFireDmg(object sender, HealthEvent.HealthChangeEventArg e) {
+       Debug.Log("Fire damage! " + e.PlayerHealth);
+    }
+
+    private void DebugHealing(object sender, HealthEvent.HealthChangeEventArg e) {
+       Debug.Log("Healing factor! " + e.PlayerHealth);
     }
 }
