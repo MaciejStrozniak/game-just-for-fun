@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DelegateTest : MonoBehaviour
 {
-
     public delegate void TestDelegateFunction();
 
     private TestDelegateFunction testDelegateFunction;

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Follower
   - Border
+  - collectible
   layers:
   - Default
   - TransparentFX
