@@ -34,7 +34,9 @@ public class CollisionWithPlayer : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player" && player.isCausingDamage == false)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = UnityEngine.Random.ColorHSV();       
+            gameObject.GetComponent<SpriteRenderer>().color = UnityEngine.Random.ColorHSV();
+            string enemyName = gameObject.GetComponent<ScriptableObjectEnemyTest>().scriptableObjectEnemy.MyString;
+            Debug.Log(enemyName);
         }        
         else if(collision.gameObject.tag == "Player" && player.isCausingDamage == true)
         {

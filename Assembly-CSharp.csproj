@@ -71,14 +71,17 @@
     <Compile Include="Assets\Scripts\MovementController.cs" />
     <Compile Include="Assets\Scripts\DelegateTest.cs" />
     <Compile Include="Assets\Scripts\EventSubscriber.cs" />
+    <Compile Include="Assets\ScriptableObjects\Scripts\ScriptableObjectEnemyTest.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\CollisionWithPlayer.cs" />
     <Compile Include="Assets\Scripts\ICollectibles.cs" />
     <Compile Include="Assets\Scripts\CollisionCollector.cs" />
+    <Compile Include="Assets\ScriptableObjects\Scripts\Testing.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\HealthEvent.cs" />
     <Compile Include="Assets\Scripts\Collector.cs" />
     <Compile Include="Assets\Scripts\Pickups.cs" />
+    <Compile Include="Assets\ScriptableObjects\Scripts\TestScriptableObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

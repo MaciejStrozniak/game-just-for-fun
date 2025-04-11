@@ -5,5 +5,5 @@ using UnityEngine;
 public interface ICollectibles
 {
     void CheckIfCollectible(GameObject gameObject);
-    
+
 }

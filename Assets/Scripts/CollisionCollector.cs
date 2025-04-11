@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollisionCollector : MonoBehaviour
 {
-
+    // Skrzypt przyczepiany do obiektu gracza
     void OnCollisionEnter2D(Collision2D collision)
     {
         ICollectibles collectibles = collision.gameObject.GetComponent<ICollectibles>();
@@ -13,6 +13,6 @@ public class CollisionCollector : MonoBehaviour
             collectibles.CheckIfCollectible(collision.gameObject);
         }
         else
-            Debug.Log("Nie działa");
+            Debug.Log("Not an Interface object");
     }
 }
