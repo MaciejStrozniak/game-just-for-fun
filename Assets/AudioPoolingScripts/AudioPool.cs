@@ -47,7 +47,7 @@ public class AudioPool : MonoBehaviour
 
     private void InitializePool()
     {
-        for(int i; i < settings.initialSize; i++)
+        for(int i =0 ; i < settings.initialSize; i++)
         {
             CreateNewAudioSource();
         }
@@ -65,7 +65,7 @@ public class AudioPool : MonoBehaviour
 
     public PooledAudioSource GetAudioSource()
     {
-        if(availableAudioSources.Count = 0)
+        if(availableAudioSource.Count == 0)
         {
             if(settings.expandable && (activeAudioSources.Count + availableAudioSource.Count) < settings.maxSize)
             {
@@ -79,13 +79,13 @@ public class AudioPool : MonoBehaviour
             }
         }
 
-        PooledAudioSource source = availableAudioSources.Dequeue();
+        PooledAudioSource source = availableAudioSource.Dequeue();
         activeAudioSources.Add(source);
         source.gameObject.SetActive(true);
         return source;
     }
 
-    public void ReturnToPull(PooledAudioSource source)
+    public void ReturnToPool(PooledAudioSource source)
     {
         if(activeAudioSources.Contains(source))
         {
