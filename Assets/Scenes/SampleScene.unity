@@ -602,9 +602,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1230562847}
-  - component: {fileID: 1230562846}
   - component: {fileID: 1230562845}
   - component: {fileID: 1230562844}
+  - component: {fileID: 1230562848}
   m_Layer: 0
   m_Name: SoundPooler
   m_TagString: Untagged
@@ -634,7 +634,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3261d2f99c81e7646815b808998c86d9, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -720,22 +720,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1230562846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230562843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3479b0efea8ec2649a315954b8431e5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  settings:
-    initialSize: 10
-    maxSize: 20
-    expandable: 1
 --- !u!4 &1230562847
 Transform:
   m_ObjectHideFlags: 0
@@ -751,6 +735,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1230562848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230562843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d743a768dfcae64cbd159146fcfa9ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToFire: {fileID: 8300000, guid: f570a490666b5bd4181109e3a22d16d1, type: 3}
+  volume: 1
+  playInterval: 0.3
 --- !u!1 &1267966424
 GameObject:
   m_ObjectHideFlags: 0
