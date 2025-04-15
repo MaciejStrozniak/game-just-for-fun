@@ -1,0 +1,119 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AudioPool : MonoBehaviour
+{
+    private static AudioPool instance;
+    public static AudioPool Instance
+    {
+        get
+        {
+            if(instance == null)
+            {
+                GameObject gameObject = new GameObject("Audio Pool");
+                instance = gameObject.AddComponent<AudioPool>();
+                DontDestroyOnLoad(gameObject);
+            }
+    
+            return instance;
+        }
+    }
+
+    [System.Serializable]
+    public class PoolSettings
+    {
+        public int initialSize = 10;
+        public int maxSize = 20;
+        public bool expandable = true;
+    }
+
+    public PoolSettings settings = new PoolSettings();
+
+    private Queue<PooledAudioSource> availableAudioSource = new Queue<PooledAudioSource>();
+    private List<PooledAudioSource> activeAudioSources = new List<PooledAudioSource>();
+
+    private void Awake()
+    {
+        if(instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        InitializePool();
+    }
+
+    private void InitializePool()
+    {
+        for(int i; i < settings.initialSize; i++)
+        {
+            CreateNewAudioSource();
+        }
+    }
+
+    private PooledAudioSource CreateNewAudioSource()
+    {
+        GameObject audioObject = new GameObject("PooledAudio");
+        audioObject.transform.SetParent(transform);
+        PooledAudioSource pooledSource = audioObject.AddComponent<PooledAudioSource>();
+        pooledSource.Initialize(this);
+        availableAudioSource.Enqueue(pooledSource);
+        return pooledSource;
+    }
+
+    public PooledAudioSource GetAudioSource()
+    {
+        if(availableAudioSources.Count = 0)
+        {
+            if(settings.expandable && (activeAudioSources.Count + availableAudioSource.Count) < settings.maxSize)
+            {
+                CreateNewAudioSource();
+            }
+            else
+            {
+                Debug.Log("Max capacity reached!");
+
+                return null;
+            }
+        }
+
+        PooledAudioSource source = availableAudioSources.Dequeue();
+        activeAudioSources.Add(source);
+        source.gameObject.SetActive(true);
+        return source;
+    }
+
+    public void ReturnToPull(PooledAudioSource source)
+    {
+        if(activeAudioSources.Contains(source))
+        {
+            source.Stop();
+            source.gameObject.SetActive(false);
+            activeAudioSources.Remove(source);
+            availableAudioSource.Enqueue(source);
+        }
+    }
+
+    public void PlayOneShot(AudioClip audioClip, Vector3 position, float volume = 1f)
+    {
+        PooledAudioSource source = GetAudioSource();
+        if(source != null)
+        {
+            source.transform.position = position;
+            source.PlayOneShot(audioClip, volume);
+        }
+    }
+
+    public PooledAudioSource Play(AudioClip audioClip, Vector3 position, bool loop = false, float volume = 1f)
+    {
+        PooledAudioSource source = GetAudioSource();
+        if(source != null)
+        {
+            source.transform.position = position;
+            source.Play(audioClip, loop, volume);
+        }
+        return null;
+    }
+}
