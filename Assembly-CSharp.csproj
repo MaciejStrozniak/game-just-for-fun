@@ -65,25 +65,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Destroyer.cs" />
+    <Compile Include="Assets\Scripts\SharingScripts\MethodsReader.cs" />
     <Compile Include="Assets\Scripts\EventHealthSubscriber.cs" />
     <Compile Include="Assets\AudioPoolingScripts\PooledAudioSource.cs" />
     <Compile Include="Assets\Scripts\EventTest.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\MovementController.cs" />
     <Compile Include="Assets\Scripts\DelegateTest.cs" />
+    <Compile Include="Assets\AudioPoolingScripts\PlayAmbOnAwake.cs" />
     <Compile Include="Assets\AudioPoolingScripts\FirePooledSound.cs" />
     <Compile Include="Assets\Scripts\EventSubscriber.cs" />
     <Compile Include="Assets\ScriptableObjects\Scripts\ScriptableObjectEnemyTest.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Cursor\Audio pooling\PooledAudioSource.cs" />
-    <Compile Include="Assets\Cursor\Audio pooling\AudioPool.cs" />
+    <Compile Include="Assets\Experiments\Cursor\Audio pooling\PooledAudioSource.cs" />
     <Compile Include="Assets\Scripts\CollisionWithPlayer.cs" />
+    <Compile Include="Assets\AudioPoolingScripts\FirePooledSound_2.cs" />
     <Compile Include="Assets\AudioPoolingScripts\AudioPool.cs" />
+    <Compile Include="Assets\Scripts\SharingScripts\Methods.cs" />
     <Compile Include="Assets\Scripts\ICollectibles.cs" />
     <Compile Include="Assets\Scripts\CollisionCollector.cs" />
     <Compile Include="Assets\ScriptableObjects\Scripts\Testing.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\HealthEvent.cs" />
+    <Compile Include="Assets\Experiments\Cursor\Audio pooling\AudioPool.cs" />
     <Compile Include="Assets\Scripts\Collector.cs" />
     <Compile Include="Assets\Scripts\Pickups.cs" />
     <Compile Include="Assets\ScriptableObjects\Scripts\TestScriptableObject.cs" />

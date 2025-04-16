@@ -1,6 +1,7 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 public class AudioPool : MonoBehaviour
 {
@@ -45,12 +46,19 @@ public class AudioPool : MonoBehaviour
         InitializePool();
     }
 
+    // lokalizacja Unity localization package
+    // Unity postprocess
+    
     private void InitializePool()
     {
+        Profiler.BeginSample("AudioPool Initialization");
+
         for(int i =0 ; i < settings.initialSize; i++)
-        {
+        {            
             CreateNewAudioSource();
         }
+
+        Profiler.EndSample();
     }
 
     private PooledAudioSource CreateNewAudioSource()
@@ -58,7 +66,7 @@ public class AudioPool : MonoBehaviour
         GameObject audioObject = new GameObject("PooledAudio");
         audioObject.transform.SetParent(transform);
         PooledAudioSource pooledSource = audioObject.AddComponent<PooledAudioSource>();
-        pooledSource.Initialize(this); // ???????????????????????????????????????????????????????????????????????????????
+        pooledSource.Initialize(this);
         availableAudioSource.Enqueue(pooledSource);
         return pooledSource;
     }
@@ -89,6 +97,7 @@ public class AudioPool : MonoBehaviour
     {
         if(activeAudioSources.Contains(source))
         {
+            source.SetPitch(1f);
             source.Stop();
             source.gameObject.SetActive(false);
             activeAudioSources.Remove(source);
@@ -114,6 +123,21 @@ public class AudioPool : MonoBehaviour
             source.transform.position = position;
             source.Play(audioClip, loop, volume);
         }
-        return null;
+
+        return source;
     }
+
+    public PooledAudioSource PlayWithRandomPitch(AudioClip audioClip, Vector3 position, bool loop = false, float volume = 1f)
+    {
+        PooledAudioSource source = GetAudioSource();
+        if(source != null)
+        {
+            source.transform.position = position;
+            source.SetPitch(UnityEngine.Random.Range(0f, 2f));
+            source.Play(audioClip, loop, volume);
+        }
+
+        return source;
+    }
+
 }

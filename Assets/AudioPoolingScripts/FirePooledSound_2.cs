@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FirePooledSound : MonoBehaviour
+public class FirePooledSound_2 : MonoBehaviour
 {
     [SerializeField] private AudioClip soundToFire;
     [SerializeField] private float volume = 1f;
@@ -11,7 +11,7 @@ public class FirePooledSound : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Z))
+        if(Input.GetKeyDown(KeyCode.X))
         {
             isPlaying = !isPlaying;
         }

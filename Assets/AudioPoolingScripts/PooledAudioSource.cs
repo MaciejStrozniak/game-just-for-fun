@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -52,7 +50,7 @@ public class PooledAudioSource : MonoBehaviour
     {
         if(returnToPoolCoroutine != null)
         {
-            StopCoroutine(returnToPoolCoroutine);
+            // StopCoroutine(returnToPoolCoroutine);
             returnToPoolCoroutine = null;
         }
 
