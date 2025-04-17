@@ -1,37 +1,48 @@
+using System.Collections;
 using UnityEngine;
 
 public class MethodsReader : MonoBehaviour
 {
-    public Methods methods;
-
+    [SerializeField] private Methods methods;
     [SerializeField] private AudioClip audioClipFromInspector;
-    [SerializeField] private AudioSource thisAudioSource;
-    [SerializeField] private float volume = 0;
+    [SerializeField] private float volume = 10f;
 
-    private float waitUntilTheTimeIsRigth = 5f;
+    private float waitUntilTheTimeIsRight = 5f;
     private bool debugAudioMute = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        thisAudioSource = gameObject.AddComponent<AudioSource>();
-        methods.startAudioSource(thisAudioSource, methods.setAudioClip(audioClipFromInspector));    
+        volume = 1f;
+        methods.setAudioSource(gameObject.AddComponent<AudioSource>());
+        methods.startAudioSource(methods.setAudioClip(audioClipFromInspector));    
     }
 
     // Update is called once per frame
     void Update()
     {
-        waitUntilTheTimeIsRigth -= Time.deltaTime;
+        waitUntilTheTimeIsRight -= Time.deltaTime;
 
-        if(waitUntilTheTimeIsRigth >= 0)
-            Debug.Log(waitUntilTheTimeIsRigth);
-
-
-        else if(waitUntilTheTimeIsRigth <= 0 && debugAudioMute)
+        if(waitUntilTheTimeIsRight >= 0)
         {
-            methods.setNewVolume(thisAudioSource, volume);
+            volume -= 0.0001f;
+            methods.changeVolumeFloat(volume);
+            Debug.Log(waitUntilTheTimeIsRight);
+        }
+        else if(waitUntilTheTimeIsRight <= 0 && debugAudioMute)
+        {
+            volume = 0;
+            methods.setMute(volume);
             Debug.Log("Music mute!");
             debugAudioMute = !debugAudioMute;
+            StartCoroutine(StopAudioSourceAfterSeconds(2f));
         }
+    }
+
+    private IEnumerator StopAudioSourceAfterSeconds(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        methods.stopAudioSource();
+        Debug.Log(methods._internalAudioSource.isPlaying);
     }
 }

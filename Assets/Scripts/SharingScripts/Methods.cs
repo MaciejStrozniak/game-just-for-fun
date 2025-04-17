@@ -2,24 +2,41 @@ using UnityEngine;
 
 public class Methods : MonoBehaviour
 {
-    public AudioClip setAudioClip(AudioClip getAudioClip)
-    {
-        AudioClip setAudioClip = getAudioClip;
+    public AudioSource _internalAudioSource;
 
-        return setAudioClip;
+    public AudioSource setAudioSource(AudioSource audioSource)
+    {
+        _internalAudioSource = audioSource;
+
+        return _internalAudioSource;
     }
 
-    public void startAudioSource(AudioSource audioSource, AudioClip audioClip)
+    public AudioClip setAudioClip(AudioClip audioClip)
     {
-        audioSource.clip = audioClip;
-        audioSource.Play();
+        AudioClip audioClipToSet = audioClip;
+
+        return audioClipToSet;
     }
 
-    public AudioSource setNewVolume(AudioSource audioSourceToSet, float volume)
+    public void startAudioSource(AudioClip audioClip)
     {
-        audioSourceToSet.volume = volume;
+        _internalAudioSource.clip = audioClip;
+        _internalAudioSource.Play();
+    }
 
-        return audioSourceToSet;
+    public void changeVolumeFloat(float volume)
+    {
+        _internalAudioSource.volume = volume;
+    }
+
+    public void setMute(float volume)
+    {
+        _internalAudioSource.volume = volume;
+    }
+
+    public void stopAudioSource()
+    {
+        _internalAudioSource.Stop();
     }
 
 }
